@@ -10,4 +10,6 @@ import java.util.ArrayList;
 //Interfaz implementa ciertos metodos que ya estan implementados en CrudRepository que es la clase que implementa la
 // mayoria de metodos para la DB, se especifica el tipo de dato = UsuarioModel y el id
 public interface UsuarioRepository extends CrudRepository<UsuarioModel, Long> {
+    //Al nombrar el metodo como metodo abstracto findByxxx busca automaticamente por el argumento que se le pase
+    public abstract ArrayList<UsuarioModel> findByPrioridad(Integer prioridad);
 }
