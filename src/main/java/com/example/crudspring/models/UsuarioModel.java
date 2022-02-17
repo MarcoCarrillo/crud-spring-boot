@@ -1,5 +1,7 @@
 package com.example.crudspring.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 
@@ -12,11 +14,22 @@ public class UsuarioModel {
     @Column(unique = true, nullable = false)
     private Long id;
 
-
-
     private String nombre;
     private String email;
     private Integer prioridad;
+
+    @JsonIgnore
+    @OneToOne(fetch =FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "detalle_id")
+    private DetalleUsuarioModel detalleUsuario;
+
+    public DetalleUsuarioModel getDetalleUsuario() {
+        return detalleUsuario;
+    }
+
+    public void setDetalleUsuario(DetalleUsuarioModel detalleUsuario) {
+        this.detalleUsuario = detalleUsuario;
+    }
 
     public Long getId() {
         return id;
@@ -48,5 +61,18 @@ public class UsuarioModel {
 
     public void setPrioridad(Integer prioridad) {
         this.prioridad = prioridad;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "UsuarioModel{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", prioridad=" + prioridad +
+                ", detalleUsuario=" + detalleUsuario +
+                '}';
     }
 }

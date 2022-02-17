@@ -28,9 +28,9 @@ public class UsuarioService {
         return usuarioRepository.findById(id);
     }
 
-    public ArrayList<UsuarioModel> obtenerPorPrioridad(Integer prioridad){
-        return usuarioRepository.findByPrioridad(prioridad);
-    }
+//    public ArrayList<UsuarioModel> obtenerPorPrioridad(Integer prioridad){
+//        return usuarioRepository.findByPrioridad(prioridad);
+//    }
 
     public boolean eliminarUsuario(Long id){
         try {
@@ -41,8 +41,8 @@ public class UsuarioService {
         }
     }
 
-    public ArrayList<UsuarioModel> obtenerPorNombreYId(String nombre, Long id){
-        return usuarioRepository.findByNombreAndId(nombre, id);
-    }
+//    public ArrayList<UsuarioModel> obtenerPorNombreYId(String nombre, Long id){
+//        return usuarioRepository.findByNombreAndId(nombre, id);
+//    }
 
 }

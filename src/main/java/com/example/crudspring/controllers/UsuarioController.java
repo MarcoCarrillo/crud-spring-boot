@@ -1,5 +1,6 @@
 package com.example.crudspring.controllers;
 
+import com.example.crudspring.models.DetalleUsuarioModel;
 import com.example.crudspring.models.UsuarioModel;
 import com.example.crudspring.services.UsuarioService;
 import org.apache.log4j.Logger;
@@ -29,7 +30,7 @@ public class UsuarioController {
     public ArrayList<UsuarioModel> obtenerUsuarios(){
         //Duda mostrar en array
         ArrayList<UsuarioModel> usuarios = usuarioService.obtenerUsuarios();
-        System.out.println(usuarios.size());
+//        System.out.println(usuarios.size());
         for (int i = 0; i < usuarios.size() ; i++) {
             logger.info("Usuario: " + usuarios.get(i).getNombre());
         }
@@ -51,12 +52,12 @@ public class UsuarioController {
         return this.usuarioService.obtenerPorId(id);
     }
 
-    @GetMapping("/query")
-    public ArrayList<UsuarioModel> obtenerUserPorPrioridad(@RequestParam("prioridad") Integer prioridad){
-        logger.info("Se obtuvieron el/los usuarios por prioridad #" + prioridad);
-        return this.usuarioService.obtenerPorPrioridad(prioridad);
-
-    }
+//    @GetMapping("/query")
+//    public ArrayList<UsuarioModel> obtenerUserPorPrioridad(@RequestParam("prioridad") Integer prioridad){
+//        logger.info("Se obtuvieron el/los usuarios por prioridad #" + prioridad);
+//        return this.usuarioService.obtenerPorPrioridad(prioridad);
+//
+//    }
 
     @DeleteMapping(path = "/{id}")
     public String eliminarUserPorId(@PathVariable("id") Long id){
@@ -70,10 +71,10 @@ public class UsuarioController {
         }
     }
 
-    @GetMapping("/nombreId")
-    public ArrayList<UsuarioModel> obtenerUserPorNombreYId(@RequestParam("nombre") String nombre,
-                                                           @RequestParam("id") Long id) {
-        return this.usuarioService.obtenerPorNombreYId(nombre, id);
-
-    }
+//    @GetMapping("/nombreId")
+//    public ArrayList<UsuarioModel> obtenerUserPorNombreYId(@RequestParam("nombre") String nombre,
+//                                                           @RequestParam("id") Long id) {
+//        return this.usuarioService.obtenerPorNombreYId(nombre, id);
+//
+//    }
 }
