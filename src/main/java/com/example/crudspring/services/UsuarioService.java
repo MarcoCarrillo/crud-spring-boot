@@ -41,4 +41,8 @@ public class UsuarioService {
         }
     }
 
+    public ArrayList<UsuarioModel> obtenerPorNombreYId(String nombre, Long id){
+        return usuarioRepository.findByNombreAndId(nombre, id);
+    }
+
 }

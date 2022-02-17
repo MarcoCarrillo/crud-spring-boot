@@ -69,4 +69,11 @@ public class UsuarioController {
             return "No se pudo eliminar el usuario con id #" + id;
         }
     }
+
+    @GetMapping("/nombreId")
+    public ArrayList<UsuarioModel> obtenerUserPorNombreYId(@RequestParam("nombre") String nombre,
+                                                           @RequestParam("id") Long id) {
+        return this.usuarioService.obtenerPorNombreYId(nombre, id);
+
+    }
 }

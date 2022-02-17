@@ -12,4 +12,5 @@ import java.util.ArrayList;
 public interface UsuarioRepository extends CrudRepository<UsuarioModel, Long> {
     //Al nombrar el metodo como metodo abstracto findByxxx busca automaticamente por el argumento que se le pase
     public abstract ArrayList<UsuarioModel> findByPrioridad(Integer prioridad);
+    public abstract ArrayList<UsuarioModel> findByNombreAndId(String nombre, Long id);
 }
