@@ -1,13 +1,11 @@
 package com.example.crudspring.controllers;
 
 import com.example.crudspring.models.DetalleUsuarioModel;
-import com.example.crudspring.models.DetallesYUsuarios;
 import com.example.crudspring.models.UsuarioModel;
 import com.example.crudspring.services.DetalleUsuarioService;
 import com.example.crudspring.services.UsuarioService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/all")
-public class Custom {
+@RequestMapping("/allUsuarios")
+public class CustomController {
     //Log4j
-    private static Logger logger = Logger.getLogger(Custom.class);
+    private static Logger logger = Logger.getLogger(CustomController.class);
 
     @Autowired
     UsuarioService usuarioService;
